@@ -1,5 +1,11 @@
-import AthleteAvatat from './AthleteAvatar';
+import AthleteAvatar from './AthleteAvatar';
 import AthleteListItem from './AthleteListItem';
-import NavigationBar from './NavigationBar'
+import NavigationBar from './NavigationBar';
+import AthleteAttribute from './AthleteAttribute';
 
-export { NavigationBar, AthleteAvatat, AthleteListItem };
+export {
+  NavigationBar,
+  AthleteAvatar,
+  AthleteListItem,
+  AthleteAttribute,
+};

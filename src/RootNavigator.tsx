@@ -1,5 +1,5 @@
 import React from 'react';
-import { AthletesPage } from './pages';
+import { AthletesPage, AthleteDetails } from './pages';
 import {
   Switch,
   BrowserRouter as Router,
@@ -10,8 +10,11 @@ const RootNavigator = () => {
   return (
     <Router>
      <Switch>
-      <Route path='/'>
+      <Route exact path='/'>
         <AthletesPage />
+      </Route>
+      <Route path='/athlete/:id'>
+        <AthleteDetails />
       </Route>
     </Switch>
   </Router>

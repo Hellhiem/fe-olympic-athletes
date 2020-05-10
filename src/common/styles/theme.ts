@@ -8,6 +8,7 @@ const theme: ThemeType = {
     darkRed: '#941208',
     white: 'white',
     blue: '#00BCD4',
+    darkGrey: '#2d2d2d',
   },
 };
 

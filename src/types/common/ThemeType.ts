@@ -6,6 +6,7 @@ type ThemeType = {
     darkRed: string;
     white: string;
     blue: string;
+    darkGrey: string;
   };
 };
 

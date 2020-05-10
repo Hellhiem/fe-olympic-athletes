@@ -1,5 +1,12 @@
 {
   "Common": {
     "Title": "Olympic Athletes"
+  },
+  "AthleteDetails": {
+    "NoAthlete": "Athlete is not available right now",
+    "DOB": "DOB",
+    "Weight": "Weight",
+    "Height": "Height",
+    "Bio": "Bio"
   }
 }

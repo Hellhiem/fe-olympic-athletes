@@ -4,13 +4,14 @@ import { baseUrl } from '../../services/constants';
 
 type PropsType = {
   photoId: number;
+  big?: boolean;
 };
 
 const zoom = keyframes`
   from {
     width: 120px;
-  height: 120px;
-  border-radius: 60px;
+   height: 120px;
+   border-radius: 60px;
   }
 
   to {
@@ -29,10 +30,18 @@ const AthleteMiniature = styled.img`
   }
 `;
 
-const AthleteAvater = ({photoId}: PropsType) => {
+const BigAthleteAvatar = styled.img`
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+`;
+
+const AthleteAvater = ({ photoId, big = false }: PropsType) => {
   const photoUri = `${baseUrl}/athletes/${photoId}/photo`;
 
-  return (
+  return big ? (
+    <BigAthleteAvatar src={photoUri} alt='athlete_image' />
+  ) : (
     <AthleteMiniature src={photoUri} alt='athlete_image' />
   );
 };
