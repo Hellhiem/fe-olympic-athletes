@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Athlete from '../../types/athletes/Athlete';
 import ThemeType from '../../types/common/ThemeType';
 import AthleteResult from '../../types/athletes/AthleteResult';
-import { NavigationBar, AthleteAvatar, AthleteAttribute } from '../../components';
+import { NavigationBar, AthleteAvatar, AthleteAttribute, MedalCounter } from '../../components';
 
 type PropsType = {
   athlete?: Athlete;
@@ -55,6 +55,11 @@ const BioTitle = styled.h1`
   color: ${({ theme }: { theme: ThemeType; }) => theme.colors.black};
 `;
 
+const MedalsTitle = styled.h3`
+  color: ${({ theme }: { theme: ThemeType; }) => theme.colors.white};
+  opacity: 0.6;
+`;
+
 const AthleteBio = styled.p``;
 
 const AthleteDetailsComponent = ({ athlete, athleteResults }: PropsType) => {
@@ -73,6 +78,14 @@ const AthleteDetailsComponent = ({ athlete, athleteResults }: PropsType) => {
           <AthleteAttribute attribute={t('AthleteDetails.DOB')} detail={athlete.dateOfBirth}/>
           <AthleteAttribute attribute={t('AthleteDetails.Weight')} detail={`${athlete.weight} kg`} />
           <AthleteAttribute attribute={t('AthleteDetails.Height')} detail={`${athlete.height} cm`} />
+          <MedalsTitle>{t('AthleteDetails.Medals').toUpperCase()}</MedalsTitle>
+          {
+            athleteResults.map(result => {
+              return (
+                <MedalCounter key={result.city} athleteResult={result} />
+              );
+            })
+          }
         </AthleteAttributesContainer>
       </AthleteDetailsContainer>
       <AthleteBioContainer>

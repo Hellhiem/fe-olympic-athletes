@@ -18,5 +18,5 @@ You will also see any lint errors in the console.
 ## Known issues
 * Webpack implementation would be nice
 * Add absolut paths
-* Missing Athlte Details Pag
+* Local storage for data
 * Loader
